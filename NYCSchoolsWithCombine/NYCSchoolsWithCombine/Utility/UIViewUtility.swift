@@ -31,4 +31,8 @@ extension UIView {
         self.bottomAnchor.constraint(equalTo: superViewSafeArea.bottomAnchor, constant: -constant).isActive = true
     }
     
+    func setDynamicBackgroundColor() {
+        self.backgroundColor = .white | .black
+    }
+    
 }

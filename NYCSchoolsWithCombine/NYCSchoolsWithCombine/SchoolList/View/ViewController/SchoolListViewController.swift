@@ -36,7 +36,7 @@ class SchoolListViewController: UIViewController {
         super.viewDidLoad()
         self.title = "NYC Schools"
         
-        self.view.backgroundColor = .white
+        self.view.setDynamicBackgroundColor()
         self.view.addSubview(self.schoolTable)
         self.schoolTable.bindToSuper()
         
@@ -50,6 +50,10 @@ class SchoolListViewController: UIViewController {
             .store(in: &self.subs)
         
         self.schoolListViewModel.requestSchools()
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        self.view.setDynamicBackgroundColor()
     }
     
 }

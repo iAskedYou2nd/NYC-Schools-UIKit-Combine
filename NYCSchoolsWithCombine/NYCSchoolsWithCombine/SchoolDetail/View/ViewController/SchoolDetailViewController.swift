@@ -52,8 +52,7 @@ class SchoolDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .white
-
+        self.view.setDynamicBackgroundColor()
         let vStack = UIStackView(frame: .zero)
         vStack.translatesAutoresizingMaskIntoConstraints = false
         vStack.axis = .vertical
@@ -84,4 +83,8 @@ class SchoolDetailViewController: UIViewController {
         self.coordinator?.presentSchoolWebsite(detailViewModel: self.schoolDetailViewModel)
     }
 
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        self.view.setDynamicBackgroundColor()
+    }
+    
 }
